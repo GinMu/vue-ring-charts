@@ -1,4 +1,5 @@
 <template>
+<div>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
@@ -8,8 +9,11 @@
 			</div>
 		</div>
 	</div>
+	<ring-main></ring-main>
+</div>
 </template>
 <script>
+import main from './data-num.vue'
 	export default {
 		data() {
 				return {
@@ -33,6 +37,9 @@
 				choose(index) {
 					this.selected = index;
 				}
+			},
+			components:{
+			"ring-main":main
 			}
 	}
 </script>
