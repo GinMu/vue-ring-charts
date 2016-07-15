@@ -9,11 +9,14 @@
 			</div>
 		</div>
 	</div>
-	<ring-main></ring-main>
+	<ring-main :is="currentView" transition="fade" transition-mode="out-in"></ring-main>
 </div>
 </template>
 <script>
-import main from './data-num.vue'
+import dataNum from './data-num.vue';
+import dataPercent from './data-percent.vue';
+import dataRegion from './data-region.vue';
+import dataUuid from './data-uuid.vue';
 	export default {
 		data() {
 				return {
@@ -30,16 +33,21 @@ import main from './data-num.vue'
 						tabName: 'UUID查询',
 						tabType: 'uuid'
 					}],
-					selected: 0
+					selected: 0,
+					currentView:'view_0'
 				}
 			},
 			methods: {
 				choose(index) {
 					this.selected = index;
+					this.currentView='view_'+index;
 				}
 			},
 			components:{
-			"ring-main":main
+			"view_0":dataNum,
+			"view_1":dataPercent,
+			"view_2":dataRegion,
+			"view_3":dataUuid,
 			}
 	}
 </script>

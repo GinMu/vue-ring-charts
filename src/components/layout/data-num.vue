@@ -1,12 +1,12 @@
 <template>
-	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main" id="ring-charts">
+	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main">
 		<div class="bs-example shown" id="number" data-example-id="single-button-dropdown" style="text-align:center;min-width:800px;">
 			<span style="margin-right:5px;">日志类型：</span>
 			<div class="btn-group">
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height:40px;">
-      <span id="number-title" filename="devices.log">设备数量</span>
-      <span class="caret"></span>
-    </button>
+                     <span id="number-title" filename="devices.log">设备数量</span>
+                     <span class="caret"></span>
+                </button>
 				<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
 					<li text="设备数量" filename="devices.log" type="number-title"><a href="#">设备数量</a></li>
 					<li text="新增彩铃用户" filename="new_vip_user.log" type="number-title"><a href="#">新增彩铃用户</a></li>
@@ -22,14 +22,15 @@
 				</ul>
 			</div>
 			<label class="radio-inline" style="margin-left:20px;">
-    <input type="radio" name="inlineRadioOptions" id="line" value="line" checked> 折线图
-  </label>
+                <input type="radio" name="inlineRadioOptions" id="line" value="line" checked> 折线图
+            </label>
 			<label class="radio-inline">
-    <input type="radio" name="inlineRadioOptions" id="column" value="column"> 柱状图
-  </label>
+               <input type="radio" name="inlineRadioOptions" id="column" value="column"> 柱状图
+            </label>
 			<label class="checkbox-inline" style="margin-left:20px;">
-    <input type="checkbox" id="number-title-data-labels" value="data-labels" checked>数据标识
-  </label>
+               <input type="checkbox" id="number-title-data-labels" value="data-labels" checked>数据标识
+             </label>
 		</div>
-		<div>
+		<div class="charts-container">
+	<div>
 </template>
