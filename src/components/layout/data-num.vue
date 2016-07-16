@@ -8,17 +8,7 @@
                      <span class="caret"></span>
                 </button>
 				<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-					<li text="设备数量" filename="devices.log" type="number-title"><a href="#">设备数量</a></li>
-					<li text="新增彩铃用户" filename="new_vip_user.log" type="number-title"><a href="#">新增彩铃用户</a></li>
-					<li text="彩铃设置次数" filename="ring_set.log" type="number-title"><a href="#">彩铃设置次数</a></li>
-					<li text="点击设彩铃次数" filename="tap_set.log" type="number-title"><a href="#">点击设彩铃次数</a></li>
-					<li text="短信获取次数" filename="get_sms.log" type="number-title"><a href="#">短信获取次数</a></li>
-					<li text="我的点击次数" filename="my_click.log" type="number-title"><a href="#">我的点击次数</a></li>
-					<li text="推荐点击次数" filename="recommend_click.log" type="number-title"><a href="#">推荐点击次数</a></li>
-					<li text="苹果铃声点击次数" filename="apple_click.log" type="number-title"><a href="#">苹果铃声点击次数</a></li>
-					<li text="专题点击次数" filename="topic_click.log" type="number-title"><a href="#">专题点击次数</a></li>
-					<li text="酷音铃声点击次数" filename="kuyin_click.log" type="number-title"><a href="#">酷音铃声点击次数</a></li>
-					<li text="躺倒鸭点击次数" filename="course_click.log" type="number-title"><a href="#">躺倒鸭点击次数</a></li>
+					<li v-for="item in items" @click="choose($index)" text={{item.itemName}} filename={{item.itemFile}}><a href="javascript:void(0)">{{item.itemName}}</a></li>
 				</ul>
 			</dropdown>
 			<label class="radio-inline" style="margin-left:20px;">
@@ -32,13 +22,57 @@
              </label>
 		</div>
 		<div class="charts-container">
-	<div>
+			<div>
 </template>
 <script>
 	import vueStrap from 'vue-strap';
 	export default {
-		components: {
-			'dropdown': vueStrap.dropdown
-		}
+		data() {
+				return {
+					items: [{
+						itemName: '设备数量',
+						itemFile: 'devices.log'
+					}, {
+						itemName: '新增彩铃用户',
+						itemFile: 'new_vip_user.log'
+					}, {
+						itemName: '彩铃设置次数',
+						itemFile: 'ring_set.log'
+					}, {
+						itemName: '点击设彩铃次数',
+						itemFile: 'tap_set.log'
+					}, {
+						itemName: '短信获取次数',
+						itemFile: 'get_sms.log'
+					}, {
+						itemName: '我的点击次数',
+						itemFile: 'my_click.log'
+					}, {
+						itemName: '推荐点击次数',
+						itemFile: 'recommend_click.log'
+					}, {
+						itemName: '苹果铃声点击次数',
+						itemFile: 'apple_click.log'
+					}, {
+						itemName: '专题点击次数',
+						itemFile: 'topic_click.log'
+					}, {
+						itemName: '酷音铃声点击次数',
+						itemFile: 'kuyin_click.log'
+					}, {
+						itemName: '躺倒鸭点击次数',
+						itemFile: 'course_click.log'
+					}],
+					selected: 0
+				}
+			},
+			methods: {
+				choose(index) {
+					this.selected = index;
+				}
+			},
+			components: {
+				'dropdown': vueStrap.dropdown
+			}
 	}
 </script>
