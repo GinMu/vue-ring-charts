@@ -2,7 +2,7 @@
 	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main">
 		<div class="bs-example shown" id="number" data-example-id="single-button-dropdown" style="text-align:center;min-width:800px;">
 			<span style="margin-right:5px;">日志类型：</span>
-			<div class="btn-group">
+			<dropdown>
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height:40px;">
                      <span id="number-title" filename="devices.log">设备数量</span>
                      <span class="caret"></span>
@@ -20,7 +20,7 @@
 					<li text="酷音铃声点击次数" filename="kuyin_click.log" type="number-title"><a href="#">酷音铃声点击次数</a></li>
 					<li text="躺倒鸭点击次数" filename="course_click.log" type="number-title"><a href="#">躺倒鸭点击次数</a></li>
 				</ul>
-			</div>
+			</dropdown>
 			<label class="radio-inline" style="margin-left:20px;">
                 <input type="radio" name="inlineRadioOptions" id="line" value="line" checked> 折线图
             </label>
@@ -34,3 +34,11 @@
 		<div class="charts-container">
 	<div>
 </template>
+<script>
+	import vueStrap from 'vue-strap';
+	export default {
+		components: {
+			'dropdown': vueStrap.dropdown
+		}
+	}
+</script>
