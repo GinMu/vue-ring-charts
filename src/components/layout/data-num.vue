@@ -13,14 +13,12 @@
 					</li>
 				</ul>
 			</dropdown>
-			<label class="radio-inline" style="margin-left:20px;">
-                <input type="radio" name="inlineRadioOptions" id="line" value="line" checked> 折线图
-            </label>
-			<label class="radio-inline">
-               <input type="radio" name="inlineRadioOptions" id="column" value="column"> 柱状图
-            </label>
+			<label class="radio-inline" style="margin-left:20px;" v-for="radio in radios">
+			    <input type="radio" name="inlineRadioOptions" checked={{radio.radioChecked}} @click="updateType($index)">{{radio.radioName}}
+			</label>
+
 			<label class="checkbox-inline" style="margin-left:20px;">
-               <input type="checkbox" id="number-title-data-labels" value="data-labels" checked>数据标识
+               <input type="checkbox" value="数据标识" checked={{dataLabels}} @click="seriesUpdate()">数据标识
              </label>
 		</div>
 		<div class="charts-container"></div>
@@ -29,6 +27,7 @@
 <script>
 	import vueStrap from 'vue-strap';
 	import vueResource from '../../vue-resource.js';
+	import vueOperation from '../../vue-operation.js';
 	export default {
 		data() {
 				return {
@@ -67,7 +66,18 @@
 						itemName: '躺倒鸭点击次数',
 						itemFile: 'course_click.log'
 					}],
-					selected: 0
+					radios: [{
+						radioName: "折线图",
+						radioChecked: true,
+						type: "line"
+					}, {
+						radioName: "柱状图",
+						radioChecked: false,
+						type: "column"
+					}],
+					selected: 0,
+					checked: 0,
+					dataLabels: true,
 				}
 			},
 			ready() {
@@ -80,6 +90,14 @@
 					}
 					this.selected = index;
 					vueResource.ajax(this);
+				},
+				seriesUpdate() {
+					this.dataLabels = !this.dataLabels;
+					vueOperation.seriesUpdate(this.dataLabels);
+				},
+				updateType(index) {
+					this.checked = index;
+					vueOperation.updateType(this.radios[this.checked].type);
 				}
 			},
 			components: {
