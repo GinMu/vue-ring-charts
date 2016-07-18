@@ -4,11 +4,11 @@
 			<span style="margin-right:5px;">百分比类型：</span>
 			<dropdown>
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height:40px;">
-                    <span filename={{items[selected].itemFile}}>{{items[selected].itemName}}</span>
+                    <span>{{items[selected].itemName}}</span>
                     <span class="caret"></span>
                 </button>
 				<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-					<li v-for="item in items" @click="choose($index)" text={{item.itemName}} filename={{item.itemFile}}>
+					<li v-for="item in items" @click="choose($index)">
 						<a href="javascript:void(0)">{{item.itemName}}</a>
 					</li>
 				</ul>
