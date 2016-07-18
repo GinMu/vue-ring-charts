@@ -8,7 +8,9 @@
                      <span class="caret"></span>
                 </button>
 				<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-					<li v-for="item in items" @click="choose($index)" text={{item.itemName}} filename={{item.itemFile}}><a href="javascript:void(0)">{{item.itemName}}</a></li>
+					<li v-for="item in items" @click="choose($index)" text={{item.itemName}} filename={{item.itemFile}}>
+						<a href="javascript:void(0)">{{item.itemName}}</a>
+					</li>
 				</ul>
 			</dropdown>
 			<label class="radio-inline" style="margin-left:20px;">
@@ -68,6 +70,9 @@
 			},
 			methods: {
 				choose(index) {
+					if(this.selected === index) {
+						return;
+					}
 					this.selected = index;
 				}
 			},
