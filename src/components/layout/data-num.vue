@@ -23,14 +23,16 @@
                <input type="checkbox" id="number-title-data-labels" value="data-labels" checked>数据标识
              </label>
 		</div>
-		<div class="charts-container">
-			<div>
+		<div class="charts-container"></div>
+	</div>
 </template>
 <script>
 	import vueStrap from 'vue-strap';
+	import vueResource from '../../vue-resource.js';
 	export default {
 		data() {
 				return {
+					el: '.charts-container',
 					items: [{
 						itemName: '设备数量',
 						itemFile: 'devices.log'
@@ -68,12 +70,16 @@
 					selected: 0
 				}
 			},
+			ready() {
+				vueResource.ajax(this);
+			},
 			methods: {
 				choose(index) {
 					if(this.selected === index) {
 						return;
 					}
 					this.selected = index;
+					vueResource.ajax(this);
 				}
 			},
 			components: {

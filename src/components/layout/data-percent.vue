@@ -17,8 +17,8 @@
                <input type="checkbox" id="percent-title-data-labels" value="data-labels" checked>数据标识
             </label>
 		</div>
-		<div class="charts-container">
-		</div>
+		<div class="charts-container"></div>
+</div>
 </template>
 <script>
 	import vueStrap from 'vue-strap';
