@@ -4,7 +4,7 @@
 			<span style="margin-right:5px;">百分比类型：</span>
 			<dropdown>
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height:40px;">
-                    <span id="percent-title" filename="devices_percent.log">设备数量百分比</span>
+                    <span filename={{items[selected].itemFile}}>{{items[selected].itemName}}</span>
                     <span class="caret"></span>
                 </button>
 				<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
