@@ -7,8 +7,7 @@
 			</div>
 			<button class="btn btn-sm btn-primary" id="query" type="button" style="margin-left:40px;">查询</button>
 		</div>
-		<div id="container" class="charts-container">
-		</div>
 		<div class="charts-container">
+		</div>
 	</div>
 </template>
