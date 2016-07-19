@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
-					<li v-for="tab in tabs" :class="{'active':$index===selected}" @click="choose($index)" type={{tab.tabType}}><a href="javascript:void(0)">{{tab.tabName}}</a></li>
+					<li v-for="tab in tabs" :class="{'active':$index===selected}" @click="choose($index)"><a href="javascript:void(0)">{{tab.tabName}}</a></li>
 				</ul>
 			</div>
 		</div>
@@ -21,17 +21,13 @@ import dataUuid from './data-uuid.vue';
 		data() {
 				return {
 					tabs: [{
-						tabName: '数据数量',
-						tabType: 'number'
+						tabName: '数据数量'
 					}, {
-						tabName: '数据占比',
-						tabType: 'percent'
+						tabName: '数据占比'
 					}, {
-						tabName: '各省数据',
-						tabType: 'region'
+						tabName: '各省数据'
 					}, {
-						tabName: 'UUID查询',
-						tabType: 'uuid'
+						tabName: 'UUID查询'
 					}],
 					selected: 0,
 					currentView:'view_0'
