@@ -14,7 +14,7 @@
 				</ul>
 			</dropdown>
 			<label class="checkbox-inline" style="margin-left:20px;">
-               <input type="checkbox" id="percent-title-data-labels" value="data-labels" checked>数据标识
+               <input type="checkbox" value="data-labels" checked={{dataLabels}} @click="seriesUpdate()">数据标识
             </label>
 		</div>
 		<div class="charts-container"></div>
@@ -22,9 +22,13 @@
 </template>
 <script>
 	import vueStrap from 'vue-strap';
+	import vueResource from '../../vue-resource';
+	import vueOperation from '../../vue-operation';
 	export default {
 		data() {
 				return {
+				  el: '.charts-container',
+				  route: 'chart',
 					items: [{
 						itemName: '设备数量百分比',
 						itemFile: 'devices_percent.log'
@@ -38,8 +42,17 @@
 						itemName: '短信获取次数百分比',
 						itemFile: 'get_sms_percent.log'
 					}],
-					selected: 0
+					radios: [{
+						type: "line"
+					}],
+					checked: 0,
+					dataType: 'percent',
+					selected: 0,
+					dataLabels: true
 				}
+			},
+			ready(){
+			  vueResource.requestChartsData(this);
 			},
 			methods: {
 				choose(index) {
@@ -47,6 +60,11 @@
 						return;
 					}
 					this.selected = index;
+					vueResource.requestChartsData(this);
+				},
+				seriesUpdate() {
+					this.dataLabels = !this.dataLabels;
+					vueOperation.seriesUpdate(this.dataLabels);
 				}
 			},
 			components: {

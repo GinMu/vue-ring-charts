@@ -79,7 +79,7 @@
 					}],
 					selected: 0,
 					checked: 0,
-					dataLabels: true,
+					dataLabels: true
 				}
 			},
 			ready() {
