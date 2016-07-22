@@ -13,10 +13,10 @@
 </div>
 </template>
 <script>
-import dataNum from './data-num.vue';
-import dataPercent from './data-percent.vue';
-import dataRegion from './data-region.vue';
-import dataUuid from './data-uuid.vue';
+import dataNum from './data-num';
+import dataPercent from './data-percent';
+import dataRegion from './data-region';
+import dataUuid from './data-uuid';
 	export default {
 		data() {
 				return {

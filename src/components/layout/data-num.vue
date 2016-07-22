@@ -26,12 +26,13 @@
 </template>
 <script>
 	import vueStrap from 'vue-strap';
-	import vueResource from '../../vue-resource.js';
-	import vueOperation from '../../vue-operation.js';
+	import vueResource from '../../vue-resource';
+	import vueOperation from '../../vue-operation';
 	export default {
 		data() {
 				return {
 					el: '.charts-container',
+					route: 'chart',
 					items: [{
 						itemName: '设备数量',
 						itemFile: 'devices.log'

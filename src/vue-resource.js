@@ -1,6 +1,12 @@
+import vueOperation from './vue-operation';
+
 exports.ajax = function(current) {
     var self = current;
-    self.$http.get('../ringcharts/' + self.items[self.selected].itemFile, {}, {
+    var url = vueOperation.getUrl(self.route);
+    self.$http.get(url, {
+        params: {
+            filename: self.items[self.selected].itemFile
+        },
         headers: {
             "X-Requested-With": "XMLHttpRequest"
         },

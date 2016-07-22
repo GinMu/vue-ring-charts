@@ -5,8 +5,8 @@
 	</div>
 </template>
 <script>
-	import nav from './layout/nav.vue';
-	import sidebar from './layout/sidebar.vue';
+	import nav from './layout/nav';
+	import sidebar from './layout/sidebar';
 	export default {
 		components: {
 			'ring-nav': nav,

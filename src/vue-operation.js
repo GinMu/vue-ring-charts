@@ -1,4 +1,4 @@
-exports.seriesUpdate = function(label){
+exports.seriesUpdate = function(label) {
     var chart = $('.charts-container').highcharts();
     var series = chart.series;
     for (var i in series) {
@@ -19,4 +19,10 @@ exports.updateType = function(type) {
             type: type
         });
     }
+};
+
+exports.getUrl = function(route) {
+    var host = 'http://192.168.66.254:8000/';
+    var url = host + route;
+    return url;
 };
