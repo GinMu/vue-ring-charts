@@ -1,6 +1,6 @@
 import vueOperation from './vue-operation';
 
-exports.ajax = function(current) {
+exports.requestChartsData = function(current) {
     var self = current;
     var url = vueOperation.getUrl(self.route);
     self.$http.get(url, {
@@ -38,7 +38,10 @@ exports.ajax = function(current) {
                     allowOverlap: true,
                     rotation: 350,
                     y: -15,
-                    x: 10
+                    x: 10,
+                    formatter: function() {
+                        return vueOperation.convertToPercent(self.dataType,this.y);
+                    }
                 },
                 enableMouseTracking: !self.dataLabels
             }
@@ -49,7 +52,13 @@ exports.ajax = function(current) {
         var tooltip = {
             crosshairs: true,
             shared: true,
-            xDateFormat: '%Y-%m-%d %a'
+            xDateFormat: '%Y-%m-%d %a',
+            pointFormatter: function() {
+                var y = this.y;
+                var name = this.series.name;
+                var color = this.series.color;
+                return '<span style="color:' + color + ';">\u25CF</span>' + name + ':<b>' + vueOperation.convertToPercent(self.dataType,y) + '</b><br/>';
+            }
         };
         var legend = {
             y: 20

@@ -33,6 +33,7 @@
 				return {
 					el: '.charts-container',
 					route: 'chart',
+					dataType: 'number',
 					items: [{
 						itemName: '设备数量',
 						itemFile: 'devices.log'
@@ -82,7 +83,7 @@
 				}
 			},
 			ready() {
-				vueResource.ajax(this);
+				vueResource.requestChartsData(this);
 			},
 			methods: {
 				choose(index) {
@@ -90,7 +91,7 @@
 						return;
 					}
 					this.selected = index;
-					vueResource.ajax(this);
+					vueResource.requestChartsData(this);
 				},
 				seriesUpdate() {
 					this.dataLabels = !this.dataLabels;
