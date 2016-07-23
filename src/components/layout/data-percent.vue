@@ -18,7 +18,7 @@
             </label>
 		</div>
 		<div class="charts-container"></div>
-</div>
+	</div>
 </template>
 <script>
 	import vueStrap from 'vue-strap';
@@ -27,8 +27,7 @@
 	export default {
 		data() {
 				return {
-				  el: '.charts-container',
-				  route: 'chart',
+					route: 'chart',
 					items: [{
 						itemName: '设备数量百分比',
 						itemFile: 'devices_percent.log'
@@ -51,8 +50,8 @@
 					dataLabels: true
 				}
 			},
-			ready(){
-			  vueResource.requestChartsData(this);
+			ready() {
+				vueResource.requestChartsData(this);
 			},
 			methods: {
 				choose(index) {

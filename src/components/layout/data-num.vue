@@ -31,7 +31,6 @@
 	export default {
 		data() {
 				return {
-					el: '.charts-container',
 					route: 'chart',
 					dataType: 'number',
 					items: [{
