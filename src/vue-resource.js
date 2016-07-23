@@ -85,7 +85,7 @@ module.exports = {
     requestMapsData: function(current) {
         var self = current;
         var url = vueOperation.getUrl(self.route);
-        var time = self.input.value;
+        var time = self.currentTime;
         self.$http.get(url, {
             params: {
                 time: time
@@ -163,6 +163,37 @@ module.exports = {
             $('.charts-container').highcharts('Map', json);
         }, (response) => {
             alert('没有相关文件');
+        });
+    },
+    requestUUIDData: function(current) {
+        var self = current;
+        var url = vueOperation.getUrl(self.route);
+        var time = self.currentTime;
+        var uuid = self.uuid;
+        self.$http.get(url, {
+            params: {
+                time: time,
+                uuid: uuid
+            },
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            },
+            emulateJSON: false
+        }).then((response) => {
+            $('#ol_list').empty();
+            var data = JSON.parse(response.body);
+            if (!data || data.length === 0) {
+                alert('无相关记录');
+                return;
+            }
+            var list = [];
+            for (var i in data) {
+                var li = vueOperation.getOperationType(data[i]);
+                list.push(li);
+            }
+            $('#ol_list').append(list.join(''));
+        }, (response) => {
+            alert('无相关记录');
         });
     }
 };
