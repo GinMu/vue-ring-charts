@@ -5,7 +5,7 @@
 			<div class="btn-group">
 				<input type="text" id="time" class="form-control" value={{currentTime}} onclick="WdatePicker({lang:'zh-cn'})" readonly="readonly" style="background-color: #fff;height:40px;">
 			</div>
-			<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="click()">查询</button>
+			<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
 		</div>
 		<div class="charts-container">
 		</div>
@@ -27,7 +27,7 @@
 				vueResource.requestMapsData(this);
 			},
 			methods: {
-				click() {
+				query() {
 					vueResource.requestMapsData(this);
 				}
 			}
