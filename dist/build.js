@@ -14367,7 +14367,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/home.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(27)
+	__vue_template__ = __webpack_require__(30)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -14492,7 +14492,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/layout/sidebar.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(26)
+	__vue_template__ = __webpack_require__(29)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -14524,50 +14524,48 @@
 
 	var _dataNum2 = _interopRequireDefault(_dataNum);
 
-	var _dataPercent = __webpack_require__(19);
+	var _dataPercent = __webpack_require__(20);
 
 	var _dataPercent2 = _interopRequireDefault(_dataPercent);
 
-	var _dataRegion = __webpack_require__(22);
+	var _dataRegion = __webpack_require__(23);
 
 	var _dataRegion2 = _interopRequireDefault(_dataRegion);
 
-	var _dataUuid = __webpack_require__(24);
+	var _dataUuid = __webpack_require__(26);
 
 	var _dataUuid2 = _interopRequireDefault(_dataUuid);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// <template>
-	// <div>
-	// 	<div class="container-fluid">
-	// 		<div class="row">
-	// 			<div class="col-sm-3 col-md-2 sidebar">
-	// 				<ul class="nav nav-sidebar">
-	// 					<li v-for="tab in tabs" :class="{'active':$index===selected}" @click="choose($index)" type={{tab.tabType}}><a href="javascript:void(0)">{{tab.tabName}}</a></li>
-	// 				</ul>
+	// 	<div>
+	// 		<div class="container-fluid">
+	// 			<div class="row">
+	// 				<div class="col-sm-3 col-md-2 sidebar">
+	// 					<ul class="nav nav-sidebar">
+	// 						<li v-for="tab in tabs" :class="{'active':$index===selected}" @click="choose($index)">
+	// 							<a href="javascript:void(0)">{{tab.tabName}}</a>
+	// 						</li>
+	// 					</ul>
+	// 				</div>
 	// 			</div>
 	// 		</div>
+	// 		<ring-main :is="currentView" transition="fade" transition-mode="out-in"></ring-main>
 	// 	</div>
-	// 	<ring-main :is="currentView" transition="fade" transition-mode="out-in"></ring-main>
-	// </div>
 	// </template>
 	// <script>
 	exports.default = {
 		data: function data() {
 			return {
 				tabs: [{
-					tabName: '数据数量',
-					tabType: 'number'
+					tabName: '数据数量'
 				}, {
-					tabName: '数据占比',
-					tabType: 'percent'
+					tabName: '数据占比'
 				}, {
-					tabName: '各省数据',
-					tabType: 'region'
+					tabName: '各省数据'
 				}, {
-					tabName: 'UUID查询',
-					tabType: 'uuid'
+					tabName: 'UUID查询'
 				}],
 				selected: 0,
 				currentView: 'view_0'
@@ -14599,7 +14597,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/layout/data-num.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(18)
+	__vue_template__ = __webpack_require__(19)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -14635,41 +14633,17 @@
 
 	var _vueResource2 = _interopRequireDefault(_vueResource);
 
+	var _vueOperation = __webpack_require__(18);
+
+	var _vueOperation2 = _interopRequireDefault(_vueOperation);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// <template>
-	// 	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main">
-	// 		<div class="bs-example shown" id="number" data-example-id="single-button-dropdown" style="text-align:center;min-width:800px;">
-	// 			<span style="margin-right:5px;">日志类型：</span>
-	// 			<dropdown>
-	// 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height:40px;">
-	//                      <span>{{items[selected].itemName}}</span>
-	//                      <span class="caret"></span>
-	//                 </button>
-	// 				<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-	// 					<li v-for="item in items" @click="choose($index)">
-	// 						<a href="javascript:void(0)">{{item.itemName}}</a>
-	// 					</li>
-	// 				</ul>
-	// 			</dropdown>
-	// 			<label class="radio-inline" style="margin-left:20px;">
-	//                 <input type="radio" name="inlineRadioOptions" id="line" value="line" checked> 折线图
-	//             </label>
-	// 			<label class="radio-inline">
-	//                <input type="radio" name="inlineRadioOptions" id="column" value="column"> 柱状图
-	//             </label>
-	// 			<label class="checkbox-inline" style="margin-left:20px;">
-	//                <input type="checkbox" id="number-title-data-labels" value="data-labels" checked>数据标识
-	//              </label>
-	// 		</div>
-	// 		<div class="charts-container"></div>
-	// 	</div>
-	// </template>
-	// <script>
 	exports.default = {
 		data: function data() {
 			return {
-				el: '.charts-container',
+				route: 'chart',
+				dataType: 'number',
 				items: [{
 					itemName: '设备数量',
 					itemFile: 'devices.log'
@@ -14704,11 +14678,22 @@
 					itemName: '躺倒鸭点击次数',
 					itemFile: 'course_click.log'
 				}],
-				selected: 0
+				radios: [{
+					radioName: "折线图",
+					radioChecked: true,
+					type: "line"
+				}, {
+					radioName: "柱状图",
+					radioChecked: false,
+					type: "column"
+				}],
+				selected: 0,
+				checked: 0,
+				dataLabels: true
 			};
 		},
 		ready: function ready() {
-			_vueResource2.default.ajax(this);
+			_vueResource2.default.requestChartsData(this);
 		},
 
 		methods: {
@@ -14717,7 +14702,15 @@
 					return;
 				}
 				this.selected = index;
-				_vueResource2.default.ajax(this);
+				_vueResource2.default.requestChartsData(this);
+			},
+			seriesUpdate: function seriesUpdate() {
+				this.dataLabels = !this.dataLabels;
+				_vueOperation2.default.seriesUpdate(this.dataLabels);
+			},
+			updateType: function updateType(index) {
+				this.checked = index;
+				_vueOperation2.default.updateType(this.radios[this.checked].type);
 			}
 		},
 		components: {
@@ -14725,6 +14718,33 @@
 		}
 	};
 	// </script>
+	// <template>
+	// 	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main">
+	// 		<div class="bs-example shown" id="number" data-example-id="single-button-dropdown" style="text-align:center;min-width:800px;">
+	// 			<span style="margin-right:5px;">日志类型：</span>
+	// 			<dropdown>
+	// 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height:40px;">
+	//                      <span>{{items[selected].itemName}}</span>
+	//                      <span class="caret"></span>
+	//                 </button>
+	// 				<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+	// 					<li v-for="item in items" @click="choose($index)">
+	// 						<a href="javascript:void(0)">{{item.itemName}}</a>
+	// 					</li>
+	// 				</ul>
+	// 			</dropdown>
+	// 			<label class="radio-inline" style="margin-left:20px;" v-for="radio in radios">
+	// 			    <input type="radio" name="inlineRadioOptions" checked={{radio.radioChecked}} @click="updateType($index)">{{radio.radioName}}
+	// 			</label>
+	//
+	// 			<label class="checkbox-inline" style="margin-left:20px;">
+	//                <input type="checkbox" value="数据标识" checked={{dataLabels}} @click="seriesUpdate()">数据标识
+	//              </label>
+	// 		</div>
+	// 		<div class="charts-container"></div>
+	// 	</div>
+	// </template>
+	// <script>
 
 /***/ },
 /* 16 */
@@ -20669,98 +20689,333 @@
 
 /***/ },
 /* 17 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	exports.ajax = function (current) {
-	    var self = current;
-	    self.$http.get('../ringcharts/' + self.items[self.selected].itemFile, {}, {
-	        headers: {
-	            "X-Requested-With": "XMLHttpRequest"
-	        },
-	        emulateJSON: false
-	    }).then(function (response) {
-	        var title = {
-	            text: self.items[self.selected].itemName
-	        };
-	        var xAxis = {
-	            endOnTick: true,
-	            type: 'datetime',
-	            startOnTick: true,
-	            dateTimeLabelFormats: {
-	                day: '%y/%m/%d'
-	            }
-	        };
-	        var yAxis = {
-	            endOnTick: true,
-	            gridLineColor: '#c0c0c0',
-	            gridLineDashStyle: 'longdash'
-	        };
-	        var plotOptions = {
-	            series: {
+	var _vueOperation = __webpack_require__(18);
+
+	var _vueOperation2 = _interopRequireDefault(_vueOperation);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = {
+	    requestChartsData: function requestChartsData(current) {
+	        var self = current;
+	        var url = _vueOperation2.default.getUrl(self.route);
+	        self.$http.get(url, {
+	            params: {
+	                filename: self.items[self.selected].itemFile
+	            },
+	            headers: {
+	                "X-Requested-With": "XMLHttpRequest"
+	            },
+	            emulateJSON: false
+	        }).then(function (response) {
+	            var title = {
+	                text: self.items[self.selected].itemName
+	            };
+	            var chart = {
+	                type: self.radios[self.checked].type
+	            };
+	            var xAxis = {
+	                endOnTick: true,
+	                type: 'datetime',
+	                startOnTick: true,
+	                dateTimeLabelFormats: {
+	                    day: '%y/%m/%d'
+	                }
+	            };
+	            var yAxis = {
+	                endOnTick: true,
+	                gridLineColor: '#c0c0c0',
+	                gridLineDashStyle: 'longdash'
+	            };
+	            var plotOptions = {
+	                series: {
+	                    dataLabels: {
+	                        enabled: self.dataLabels,
+	                        allowOverlap: true,
+	                        rotation: 350,
+	                        y: -15,
+	                        x: 10,
+	                        formatter: function formatter() {
+	                            return _vueOperation2.default.convertToPercent(self.dataType, this.y);
+	                        }
+	                    },
+	                    enableMouseTracking: !self.dataLabels
+	                }
+	            };
+	            var credits = {
+	                enabled: false
+	            };
+	            var tooltip = {
+	                crosshairs: true,
+	                shared: true,
+	                xDateFormat: '%Y-%m-%d %a',
+	                pointFormatter: function pointFormatter() {
+	                    var y = this.y;
+	                    var name = this.series.name;
+	                    var color = this.series.color;
+	                    return '<span style="color:' + color + ";\">●</span>" + name + ':<b>' + _vueOperation2.default.convertToPercent(self.dataType, y) + '</b><br/>';
+	                }
+	            };
+	            var legend = {
+	                y: 20
+	            };
+
+	            var json = {};
+	            json.title = title;
+	            json.chart = chart;
+	            json.xAxis = xAxis;
+	            json.yAxis = yAxis;
+	            json.credits = credits;
+	            json.tooltip = tooltip;
+	            json.plotOptions = plotOptions;
+	            json.legend = legend;
+	            var data = {
+	                csv: response.body
+	            };
+	            json.data = data;
+	            var chartsContainer = self.$el.querySelector('.charts-container');
+	            $(chartsContainer).highcharts(json);
+	        });
+	    },
+	    requestMapsData: function requestMapsData(current) {
+	        var self = current;
+	        var url = _vueOperation2.default.getUrl(self.route);
+	        var time = self.currentTime;
+	        self.$http.get(url, {
+	            params: {
+	                time: time
+	            },
+	            headers: {
+	                "X-Requested-With": "XMLHttpRequest"
+	            },
+	            emulateJSON: false
+	        }).then(function (response) {
+	            var chart = {
+	                spacingBottom: 30
+	            };
+	            var tooltip = {
+	                formatter: function formatter() {
+	                    return this.point.name + "设备数量:" + this.point.value;
+	                }
+	            };
+	            var credits = {
+	                enabled: false
+	            };
+	            var title = {
+	                text: '铃声大全各省用户分布图'
+	            };
+	            var legend = {
+	                layout: 'vertical',
+	                align: 'right',
+	                verticalAlign: 'middle'
+	            };
+	            var colorAxis = {
+	                min: 0,
+	                minColor: '#E6E7E8',
+	                maxColor: '#005645',
+	                labels: {
+	                    style: {
+	                        "color": "red",
+	                        "fontWeight": "bold"
+	                    }
+	                }
+	            };
+	            var plotOptions = {
+	                map: {
+	                    states: {
+	                        hover: {
+	                            color: '#EEDD66'
+	                        }
+	                    },
+	                    dataLabels: {
+	                        enabled: true,
+	                        allowOverlap: true
+	                    }
+	                }
+	            };
+	            var json = {};
+	            json.chart = chart;
+	            json.tooltip = tooltip;
+	            json.credits = credits;
+	            json.title = title;
+	            json.legend = legend;
+	            json.colorAxis = colorAxis;
+	            json.plotOptions = plotOptions;
+	            var region = Highcharts.geojson(Highcharts.maps['countries/cn/custom/cn-all-china']);
+	            var devices = JSON.parse(response.body);
+	            $.each(region, function (i) {
+	                this.value = devices[i];
+	            });
+	            var series = [{
+	                data: region,
+	                name: '中国',
 	                dataLabels: {
 	                    enabled: true,
-	                    allowOverlap: true,
-	                    rotation: 350,
-	                    y: -15,
-	                    x: 10
-	                },
-	                enableMouseTracking: false
+	                    format: '{point.properties.cn-name}'
+	                }
+	            }];
+	            json.series = series;
+	            $('.charts-container').highcharts('Map', json);
+	        }, function (response) {
+	            alert('没有相关文件');
+	        });
+	    },
+	    requestUUIDData: function requestUUIDData(current) {
+	        var self = current;
+	        var url = _vueOperation2.default.getUrl(self.route);
+	        var time = self.currentTime;
+	        var uuid = self.uuid;
+	        self.$http.get(url, {
+	            params: {
+	                time: time,
+	                uuid: uuid
+	            },
+	            headers: {
+	                "X-Requested-With": "XMLHttpRequest"
+	            },
+	            emulateJSON: false
+	        }).then(function (response) {
+	            var ol = self.$el.querySelector('#ol_list');
+	            //$('#ol_list').empty();
+	            var data = JSON.parse(response.body);
+	            if (!data || data.length === 0) {
+	                alert('无相关记录');
+	                return;
 	            }
-	        };
-	        var credits = {
-	            enabled: false
-	        };
-	        var tooltip = {
-	            crosshairs: true,
-	            shared: true,
-	            xDateFormat: '%Y-%m-%d %a',
-	            pointFormatter: function pointFormatter() {
-	                var y = this.y;
-	                var name = this.series.name;
-	                var color = this.series.color;
-	                return '<span style="color:' + color + ";\">●</span>" + name + ':<b>' + $.convertToPercent(type, y) + '</b><br/>';
+	            var list = [];
+	            for (var i in data) {
+	                var li = _vueOperation2.default.getOperationType(data[i]);
+	                list.push(li);
 	            }
-	        };
-	        var legend = {
-	            y: 20
-	        };
-
-	        var json = {};
-	        json.title = title;
-	        json.xAxis = xAxis;
-	        json.yAxis = yAxis;
-	        json.credits = credits;
-	        json.tooltip = tooltip;
-	        json.plotOptions = plotOptions;
-	        json.legend = legend;
-	        var data = {
-	            csv: response.body
-	        };
-	        json.data = data;
-	        var chartsContainer = self.$el.querySelector('.charts-container');
-	        $(chartsContainer).highcharts(json);
-	    });
+	            $(list.join('')).appendTo('#ol_list');
+	        }, function (response) {
+	            alert('无相关记录');
+	        });
+	    }
 	};
 
 /***/ },
 /* 18 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\t<div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main\">\n\t\t<div class=\"bs-example shown\" id=\"number\" data-example-id=\"single-button-dropdown\" style=\"text-align:center;min-width:800px;\">\n\t\t\t<span style=\"margin-right:5px;\">日志类型：</span>\n\t\t\t<dropdown>\n\t\t\t\t<button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" style=\"height:40px;\">\n                     <span>{{items[selected].itemName}}</span>\n                     <span class=\"caret\"></span>\n                </button>\n\t\t\t\t<ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu\">\n\t\t\t\t\t<li v-for=\"item in items\" @click=\"choose($index)\">\n\t\t\t\t\t\t<a href=\"javascript:void(0)\">{{item.itemName}}</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</dropdown>\n\t\t\t<label class=\"radio-inline\" style=\"margin-left:20px;\">\n                <input type=\"radio\" name=\"inlineRadioOptions\" id=\"line\" value=\"line\" checked> 折线图\n            </label>\n\t\t\t<label class=\"radio-inline\">\n               <input type=\"radio\" name=\"inlineRadioOptions\" id=\"column\" value=\"column\"> 柱状图\n            </label>\n\t\t\t<label class=\"checkbox-inline\" style=\"margin-left:20px;\">\n               <input type=\"checkbox\" id=\"number-title-data-labels\" value=\"data-labels\" checked>数据标识\n             </label>\n\t\t</div>\n\t\t<div class=\"charts-container\"></div>\n\t</div>\n";
+	'use strict';
+
+	module.exports = {
+	    seriesUpdate: function seriesUpdate(label) {
+	        var chart = $('.charts-container').highcharts();
+	        var series = chart.series;
+	        for (var i in series) {
+	            series[i].update({
+	                dataLabels: {
+	                    enabled: label
+	                },
+	                enableMouseTracking: !label
+	            });
+	        }
+	    },
+	    updateType: function updateType(type) {
+	        var chart = $('.charts-container').highcharts();
+	        var series = chart.series;
+	        for (var i in series) {
+	            series[i].update({
+	                type: type
+	            });
+	        }
+	    },
+	    getUrl: function getUrl(route) {
+	        var host = 'http://192.168.66.254:8000/';
+	        var url = host + route;
+	        return url;
+	    },
+	    convertToPercent: function convertToPercent(type, number) {
+	        if (type === "percent") {
+	            return number.toFixed(1) + '%';
+	        }
+	        return number;
+	    },
+	    getOperationType: function getOperationType(list) {
+	        var html = '<li>';
+	        var type = list.type;
+	        switch (type) {
+	            case 0:
+	                html += '播放:' + list.name;
+	                break;
+	            case 1:
+	                html += '暂停:' + list.name;
+	                break;
+	            case 2:
+	                html += '点击设彩铃:' + list.name;
+	                break;
+	            case 3:
+	                html += '接收短信:' + list.name + '  tel:' + list.tel;
+	                break;
+	            case 4:
+	                html += '设置彩铃:' + list.name + '  tel:' + list.tel;
+	                break;
+	            case 5:
+	                html += '搜索:' + list.key;
+	                break;
+	            case 6:
+	                html += '页面:' + list.path;
+	                break;
+	            case 7:
+	                html += '程序升级:' + list.version;
+	                break;
+	            case 8:
+	                html += '点击appstore评论:';
+	                break;
+	            case 9:
+
+	                break;
+	            case 10:
+
+	                break;
+	            case 11:
+	                html += '获取随机码:' + list.name + '  tel:' + list.tel;
+	                break;
+	            case 12:
+	                html += '反馈信息:' + unescape(list.word) + '  tel:' + unescape(list.tel);
+	                break;
+	            case 13:
+	                html += '退订:' + list.tel;
+	                break;
+	            case 14:
+	                html += '记录地理位置:' + list.region;
+	                break;
+	            case 15:
+	                html += '记录手机空间';
+	                break;
+	            case 16:
+	                html += '下载铃声:' + list.name;
+	                break;
+	            default:
+	        }
+	        html += '</li>';
+	        return html;
+	    }
+	};
 
 /***/ },
 /* 19 */
+/***/ function(module, exports) {
+
+	module.exports = "\n\t<div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main\">\n\t\t<div class=\"bs-example shown\" id=\"number\" data-example-id=\"single-button-dropdown\" style=\"text-align:center;min-width:800px;\">\n\t\t\t<span style=\"margin-right:5px;\">日志类型：</span>\n\t\t\t<dropdown>\n\t\t\t\t<button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" style=\"height:40px;\">\n                     <span>{{items[selected].itemName}}</span>\n                     <span class=\"caret\"></span>\n                </button>\n\t\t\t\t<ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu\">\n\t\t\t\t\t<li v-for=\"item in items\" @click=\"choose($index)\">\n\t\t\t\t\t\t<a href=\"javascript:void(0)\">{{item.itemName}}</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</dropdown>\n\t\t\t<label class=\"radio-inline\" style=\"margin-left:20px;\" v-for=\"radio in radios\">\n\t\t\t    <input type=\"radio\" name=\"inlineRadioOptions\" checked={{radio.radioChecked}} @click=\"updateType($index)\">{{radio.radioName}}\n\t\t\t</label>\n\n\t\t\t<label class=\"checkbox-inline\" style=\"margin-left:20px;\">\n               <input type=\"checkbox\" value=\"数据标识\" checked={{dataLabels}} @click=\"seriesUpdate()\">数据标识\n             </label>\n\t\t</div>\n\t\t<div class=\"charts-container\"></div>\n\t</div>\n";
+
+/***/ },
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(20)
+	__vue_script__ = __webpack_require__(21)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/layout/data-percent.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(21)
+	__vue_template__ = __webpack_require__(22)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -20779,7 +21034,7 @@
 	})()}
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20792,11 +21047,20 @@
 
 	var _vueStrap2 = _interopRequireDefault(_vueStrap);
 
+	var _vueResource = __webpack_require__(17);
+
+	var _vueResource2 = _interopRequireDefault(_vueResource);
+
+	var _vueOperation = __webpack_require__(18);
+
+	var _vueOperation2 = _interopRequireDefault(_vueOperation);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
 		data: function data() {
 			return {
+				route: 'chart',
 				items: [{
 					itemName: '设备数量百分比',
 					itemFile: 'devices_percent.log'
@@ -20810,8 +21074,17 @@
 					itemName: '短信获取次数百分比',
 					itemFile: 'get_sms_percent.log'
 				}],
-				selected: 0
+				radios: [{
+					type: "line"
+				}],
+				checked: 0,
+				dataType: 'percent',
+				selected: 0,
+				dataLabels: true
 			};
+		},
+		ready: function ready() {
+			_vueResource2.default.requestChartsData(this);
 		},
 
 		methods: {
@@ -20820,6 +21093,11 @@
 					return;
 				}
 				this.selected = index;
+				_vueResource2.default.requestChartsData(this);
+			},
+			seriesUpdate: function seriesUpdate() {
+				this.dataLabels = !this.dataLabels;
+				_vueOperation2.default.seriesUpdate(this.dataLabels);
 			}
 		},
 		components: {
@@ -20843,26 +21121,31 @@
 	// 				</ul>
 	// 			</dropdown>
 	// 			<label class="checkbox-inline" style="margin-left:20px;">
-	//                <input type="checkbox" id="percent-title-data-labels" value="data-labels" checked>数据标识
+	//                <input type="checkbox" value="data-labels" checked={{dataLabels}} @click="seriesUpdate()">数据标识
 	//             </label>
 	// 		</div>
 	// 		<div class="charts-container"></div>
-	// </div>
+	// 	</div>
 	// </template>
 	// <script>
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\t<div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main\">\n\t\t<div class=\"bs-example\" id=\"percent\" data-example-id=\"single-button-dropdown\" style=\"text-align:center;min-width:800px;\">\n\t\t\t<span style=\"margin-right:5px;\">百分比类型：</span>\n\t\t\t<dropdown>\n\t\t\t\t<button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" style=\"height:40px;\">\n                    <span>{{items[selected].itemName}}</span>\n                    <span class=\"caret\"></span>\n                </button>\n\t\t\t\t<ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu\">\n\t\t\t\t\t<li v-for=\"item in items\" @click=\"choose($index)\">\n\t\t\t\t\t\t<a href=\"javascript:void(0)\">{{item.itemName}}</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</dropdown>\n\t\t\t<label class=\"checkbox-inline\" style=\"margin-left:20px;\">\n               <input type=\"checkbox\" id=\"percent-title-data-labels\" value=\"data-labels\" checked>数据标识\n            </label>\n\t\t</div>\n\t\t<div class=\"charts-container\"></div>\n</div>\n";
+	module.exports = "\n\t<div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main\">\n\t\t<div class=\"bs-example\" id=\"percent\" data-example-id=\"single-button-dropdown\" style=\"text-align:center;min-width:800px;\">\n\t\t\t<span style=\"margin-right:5px;\">百分比类型：</span>\n\t\t\t<dropdown>\n\t\t\t\t<button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" style=\"height:40px;\">\n                    <span>{{items[selected].itemName}}</span>\n                    <span class=\"caret\"></span>\n                </button>\n\t\t\t\t<ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu\">\n\t\t\t\t\t<li v-for=\"item in items\" @click=\"choose($index)\">\n\t\t\t\t\t\t<a href=\"javascript:void(0)\">{{item.itemName}}</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</dropdown>\n\t\t\t<label class=\"checkbox-inline\" style=\"margin-left:20px;\">\n               <input type=\"checkbox\" value=\"data-labels\" checked={{dataLabels}} @click=\"seriesUpdate()\">数据标识\n            </label>\n\t\t</div>\n\t\t<div class=\"charts-container\"></div>\n\t</div>\n";
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(23)
+	__vue_script__ = __webpack_require__(24)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/layout/data-region.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(25)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -20881,17 +21164,75 @@
 	})()}
 
 /***/ },
-/* 23 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main\">\n\t<div class=\"bs-example\" id=\"region\" data-example-id=\"single-button-dropdown\" style=\"text-align:center;min-width:800px;\">\n\t\t<span style=\"margin-right:5px;\">文件日期:</span>\n\t\t<div class=\"btn-group\">\n\t\t\t<input type=\"text\" class=\"form-control\" id=\"dateTime\" onclick=\"WdatePicker({lang:'zh-cn'})\" readonly=\"readonly\" style=\"background-color: #fff;height:40px;\">\n\t\t</div>\n\t\t<button class=\"btn btn-sm btn-primary\" id=\"query\" type=\"button\" style=\"margin-left:40px;\">查询</button>\n\t</div>\n\t<div class=\"charts-container\">\n\t</div>\n</div>\n";
-
-/***/ },
 /* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _vueResource = __webpack_require__(17);
+
+	var _vueResource2 = _interopRequireDefault(_vueResource);
+
+	var _vueOperation = __webpack_require__(18);
+
+	var _vueOperation2 = _interopRequireDefault(_vueOperation);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// <template>
+	// 	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main">
+	// 		<div class="bs-example" id="region" data-example-id="single-button-dropdown" style="text-align:center;min-width:800px;">
+	// 			<span style="margin-right:5px;">文件日期:</span>
+	// 			<div class="btn-group">
+	// 				<input type="text" id="time" class="form-control" v-model="currentTime" onclick="WdatePicker({lang:'zh-cn'})" readonly="readonly" style="background-color: #fff;height:40px;">
+	// 			</div>
+	// 			<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
+	// 		</div>
+	// 		<div class="charts-container">
+	// 		</div>
+	// 	</div>
+	// </template>
+	// <script>
+	exports.default = {
+		data: function data() {
+			return {
+				route: 'region',
+				currentTime: new Date(+new Date() - 16 * 3600 * 1000).toISOString().substring(0, 10)
+			};
+		},
+		ready: function ready() {
+			_vueResource2.default.requestMapsData(this);
+		},
+
+		methods: {
+			query: function query() {
+				_vueResource2.default.requestMapsData(this);
+			}
+		}
+	};
+	// </script>
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main\">\n\t<div class=\"bs-example\" id=\"region\" data-example-id=\"single-button-dropdown\" style=\"text-align:center;min-width:800px;\">\n\t\t<span style=\"margin-right:5px;\">文件日期:</span>\n\t\t<div class=\"btn-group\">\n\t\t\t<input type=\"text\" id=\"time\" class=\"form-control\" v-model=\"currentTime\" onclick=\"WdatePicker({lang:'zh-cn'})\" readonly=\"readonly\" style=\"background-color: #fff;height:40px;\">\n\t\t</div>\n\t\t<button class=\"btn btn-sm btn-primary\" type=\"button\" style=\"margin-left:40px;\" @click=\"query()\">查询</button>\n\t</div>\n\t<div class=\"charts-container\">\n\t</div>\n</div>\n";
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(25)
+	__vue_script__ = __webpack_require__(27)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/layout/data-uuid.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(28)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -20910,19 +21251,82 @@
 	})()}
 
 /***/ },
-/* 25 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main\">\n  <div class=\"bs-example\" data-example-id=\"single-button-dropdown\" style=\"text-align:center;min-width:800px;\">\n    <form class=\"form-inline\">\n      <div class=\"form-group\">\n        <span style=\"margin-right:5px;\">文件日期:</span>\n        <input type=\"text\" class=\"form-control\" id=\"uuid-dateTime\" onclick=\"WdatePicker({lang:'zh-cn'})\" readonly=\"readonly\" style=\"background-color: #fff;\">\n      </div>\n      <div class=\"form-group\">\n        <span style=\"margin-right:5px;margin-left:10px;\">UUID:</span>\n        <input type=\"input\" class=\"form-control\" id=\"uuid-text\" name=\"name\" value=\"\" style=\"min-width:350px;\">\n        <div class=\"glyphicon glyphicon-remove\" style=\"cursor:pointer;\"></div>\n      </div>\n      <button class=\"btn btn-sm btn-primary\" id=\"uuid-query\" type=\"button\" style=\"margin-left:40px;\">查询</button>\n    </form>\n    <div class=\"bs-example\" data-example-id=\"simple-ol\" style=\"width:50%;margin-left:25%;margin-top:20px;\">\n      <ol id=\"ol_list\">\n      </ol>\n    </div>\n  </div>\n</div>\n";
-
-/***/ },
-/* 26 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div>\n\t<div class=\"container-fluid\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-3 col-md-2 sidebar\">\n\t\t\t\t<ul class=\"nav nav-sidebar\">\n\t\t\t\t\t<li v-for=\"tab in tabs\" :class=\"{'active':$index===selected}\" @click=\"choose($index)\" type={{tab.tabType}}><a href=\"javascript:void(0)\">{{tab.tabName}}</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<ring-main :is=\"currentView\" transition=\"fade\" transition-mode=\"out-in\"></ring-main>\n</div>\n";
-
-/***/ },
 /* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _vueResource = __webpack_require__(17);
+
+	var _vueResource2 = _interopRequireDefault(_vueResource);
+
+	var _vueOperation = __webpack_require__(18);
+
+	var _vueOperation2 = _interopRequireDefault(_vueOperation);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// <template>
+	// 	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main">
+	// 		<div class="bs-example" data-example-id="single-button-dropdown" style="text-align:center;min-width:800px;">
+	// 			<form class="form-inline">
+	// 				<div class="form-group">
+	// 					<span style="margin-right:5px;">文件日期:</span>
+	// 					<input type="text" class="form-control" v-model="currentTime" onclick="WdatePicker({lang:'zh-cn'})" readonly="readonly" style="background-color: #fff;">
+	// 				</div>
+	// 				<div class="form-group">
+	// 					<span style="margin-right:5px;margin-left:10px;">UUID:</span>
+	// 					     <input type="input" class="form-control" name="name" v-model="uuid" style="min-width:350px;">
+	// 					<div class="glyphicon glyphicon-remove" style="cursor:pointer;" @click="clearUUID()"></div>
+	// 				</div>
+	// 				<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
+	// 			</form>
+	// 			<div class="bs-example" data-example-id="simple-ol" style="width:50%;margin-left:25%;margin-top:20px;">
+	// 				<ol id="ol_list">
+	// 				</ol>
+	// 			</div>
+	// 		</div>
+	// 	</div>
+	// </template>
+	// <script>
+	exports.default = {
+		data: function data() {
+			return {
+				route: 'search',
+				currentTime: new Date(+new Date() - 16 * 3600 * 1000).toISOString().substring(0, 10),
+				uuid: ''
+			};
+		},
+
+		methods: {
+			query: function query() {
+				_vueResource2.default.requestUUIDData(this);
+			},
+			clearUUID: function clearUUID() {
+				this.uuid = '';
+			}
+		}
+	};
+	// </script>
+
+/***/ },
+/* 28 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main\">\n\t<div class=\"bs-example\" data-example-id=\"single-button-dropdown\" style=\"text-align:center;min-width:800px;\">\n\t\t<form class=\"form-inline\">\n\t\t\t<div class=\"form-group\">\n\t\t\t\t<span style=\"margin-right:5px;\">文件日期:</span>\n\t\t\t\t<input type=\"text\" class=\"form-control\" v-model=\"currentTime\" onclick=\"WdatePicker({lang:'zh-cn'})\" readonly=\"readonly\" style=\"background-color: #fff;\">\n\t\t\t</div>\n\t\t\t<div class=\"form-group\">\n\t\t\t\t<span style=\"margin-right:5px;margin-left:10px;\">UUID:</span>\n\t\t\t\t     <input type=\"input\" class=\"form-control\" name=\"name\" v-model=\"uuid\" style=\"min-width:350px;\">\n\t\t\t\t<div class=\"glyphicon glyphicon-remove\" style=\"cursor:pointer;\" @click=\"clearUUID()\"></div>\n\t\t\t</div>\n\t\t\t<button class=\"btn btn-sm btn-primary\" type=\"button\" style=\"margin-left:40px;\" @click=\"query()\">查询</button>\n\t\t</form>\n\t\t<div class=\"bs-example\" data-example-id=\"simple-ol\" style=\"width:50%;margin-left:25%;margin-top:20px;\">\n\t\t\t<ol id=\"ol_list\">\n\t\t\t</ol>\n\t\t</div>\n\t</div>\n</div>\n";
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div>\n\t<div class=\"container-fluid\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-3 col-md-2 sidebar\">\n\t\t\t\t<ul class=\"nav nav-sidebar\">\n\t\t\t\t\t<li v-for=\"tab in tabs\" :class=\"{'active':$index===selected}\" @click=\"choose($index)\">\n\t\t\t\t\t\t<a href=\"javascript:void(0)\">{{tab.tabName}}</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<ring-main :is=\"currentView\" transition=\"fade\" transition-mode=\"out-in\"></ring-main>\n</div>\n";
+
+/***/ },
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n\t<ring-nav transition=\"fade\" transition-mode=\"out-in\"></ring-nav>\n\t<ring-sidebar transition=\"fade\" transition-mode=\"out-in\"></ring-sidebar>\n</div>\n";
