@@ -1,5 +1,5 @@
 import vueOperation from './vue-operation';
-
+import Vue from 'vue';
 module.exports = {
     requestChartsData: function(current) {
         var self = current;
@@ -180,7 +180,6 @@ module.exports = {
             },
             emulateJSON: false
         }).then((response) => {
-            $('#ol_list').empty();
             var data = JSON.parse(response.body);
             if (!data || data.length === 0) {
                 alert('无相关记录');
@@ -191,7 +190,11 @@ module.exports = {
                 var li = vueOperation.getOperationType(data[i]);
                 list.push(li);
             }
-            $('#ol_list').append(list.join(''));
+            self.ol = list.join('');
+            // var listComponent = new Vue({
+            //   template: list.join('')
+            // });
+            // listComponent.$mount().$appendTo('#ol_list');
         }, (response) => {
             alert('无相关记录');
         });
