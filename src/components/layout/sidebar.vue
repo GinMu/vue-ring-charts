@@ -11,7 +11,7 @@
 				</div>
 			</div>
 		</div>
-		<ring-main :is="currentView" transition="fade" transition-mode="out-in"></ring-main>
+		<ring-main :is="currentView" transition="fade" transition-mode="out-in" keep-alive></ring-main>
 	</div>
 </template>
 <script>
