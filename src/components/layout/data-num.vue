@@ -2,17 +2,7 @@
 	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main">
 		<div class="bs-example shown" id="number" data-example-id="single-button-dropdown" style="text-align:center;min-width:800px;">
 			<span style="margin-right:5px;">日志类型：</span>
-			<dropdown>
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height:40px;">
-                     <span>{{items[selected].itemName}}</span>
-                     <span class="caret"></span>
-                </button>
-				<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-					<li v-for="item in items" @click="choose($index)">
-						<a href="javascript:void(0)">{{item.itemName}}</a>
-					</li>
-				</ul>
-			</dropdown>
+			<ring-dropdown></ring-dropdown>
 			<label class="radio-inline" style="margin-left:20px;" v-for="radio in radios">
 			    <input type="radio" name="inlineRadioOptions" checked={{radio.radioChecked}} @click="updateType($index)">{{radio.radioName}}
 			</label>
@@ -25,7 +15,7 @@
 	</div>
 </template>
 <script>
-	import vueStrap from 'vue-strap';
+	import dropdown from '../widget/dropdown';
 	import vueResource from '../../vue-resource';
 	import vueOperation from '../../vue-operation';
 	export default {
@@ -82,16 +72,9 @@
 				}
 			},
 			ready() {
-				vueResource.requestChartsData(this);
+				//vueResource.requestChartsData(this);
 			},
 			methods: {
-				choose(index) {
-					if(this.selected === index) {
-						return;
-					}
-					this.selected = index;
-					vueResource.requestChartsData(this);
-				},
 				seriesUpdate() {
 					this.dataLabels = !this.dataLabels;
 					vueOperation.seriesUpdate(this.dataLabels);
@@ -102,7 +85,7 @@
 				}
 			},
 			components: {
-				'dropdown': vueStrap.dropdown
+				'ring-dropdown': dropdown
 			}
 	}
 </script>
