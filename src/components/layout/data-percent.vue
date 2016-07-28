@@ -2,26 +2,16 @@
 	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main">
 		<div class="bs-example" id="percent" data-example-id="single-button-dropdown" style="text-align:center;min-width:800px;">
 			<span style="margin-right:5px;">百分比类型：</span>
-			<dropdown>
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height:40px;">
-                    <span>{{items[selected].itemName}}</span>
-                    <span class="caret"></span>
-                </button>
-				<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-					<li v-for="item in items" @click="choose($index)">
-						<a href="javascript:void(0)">{{item.itemName}}</a>
-					</li>
-				</ul>
-			</dropdown>
+			<dropdown :items.once="items" :selected.sync="selected" @dropdown-notify="requestData"></dropdown>
 			<label class="checkbox-inline" style="margin-left:20px;">
-               <input type="checkbox" value="data-labels" checked={{dataLabels}} @click="seriesUpdate()">数据标识
-            </label>
+        <input type="checkbox" value="data-labels" checked={{dataLabels}} @click="seriesUpdate()">数据标识
+      </label>
 		</div>
 		<div class="charts-container"></div>
 	</div>
 </template>
 <script>
-	import vueStrap from 'vue-strap';
+	import dropdown from '../widget/dropdown';
 	import vueResource from '../../vue-resource';
 	import vueOperation from '../../vue-operation';
 	export default {
@@ -54,11 +44,7 @@
 				vueResource.requestChartsData(this);
 			},
 			methods: {
-				choose(index) {
-					if(this.selected === index) {
-						return;
-					}
-					this.selected = index;
+				requestData() {
 					vueResource.requestChartsData(this);
 				},
 				seriesUpdate() {

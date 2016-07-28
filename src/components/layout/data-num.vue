@@ -2,14 +2,13 @@
 	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ring-main">
 		<div class="bs-example shown" id="number" data-example-id="single-button-dropdown" style="text-align:center;min-width:800px;">
 			<span style="margin-right:5px;">日志类型：</span>
-			<ring-dropdown></ring-dropdown>
+			<dropdown :items.once="items" :selected.sync="selected" @dropdown-notify="requestData"></dropdown>
 			<label class="radio-inline" style="margin-left:20px;" v-for="radio in radios">
 			    <input type="radio" name="inlineRadioOptions" checked={{radio.radioChecked}} @click="updateType($index)">{{radio.radioName}}
 			</label>
-
 			<label class="checkbox-inline" style="margin-left:20px;">
-               <input type="checkbox" value="数据标识" checked={{dataLabels}} @click="seriesUpdate()">数据标识
-             </label>
+          <input type="checkbox" value="数据标识" checked={{dataLabels}} @click="seriesUpdate()">数据标识
+      </label>
 		</div>
 		<div class="charts-container"></div>
 	</div>
@@ -72,9 +71,12 @@
 				}
 			},
 			ready() {
-				//vueResource.requestChartsData(this);
+				vueResource.requestChartsData(this);
 			},
 			methods: {
+				requestData() {
+					vueResource.requestChartsData(this);
+				},
 				seriesUpdate() {
 					this.dataLabels = !this.dataLabels;
 					vueOperation.seriesUpdate(this.dataLabels);
@@ -85,7 +87,7 @@
 				}
 			},
 			components: {
-				'ring-dropdown': dropdown
+				dropdown
 			}
 	}
 </script>
