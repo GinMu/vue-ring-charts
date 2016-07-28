@@ -3,9 +3,7 @@
 		<div class="bs-example shown" id="number" data-example-id="single-button-dropdown" style="text-align:center;min-width:800px;">
 			<span style="margin-right:5px;">日志类型：</span>
 			<dropdown :items.once="items" :selected.sync="selected" @dropdown-notify="requestData"></dropdown>
-			<label class="radio-inline" style="margin-left:20px;" v-for="radio in radios">
-			    <input type="radio" name="inlineRadioOptions" checked={{radio.radioChecked}} @click="updateType($index)">{{radio.radioName}}
-			</label>
+			<radios :radios.once="radios" :checked.sync="checked" @radio-notify="updateType"></radios>
 			<label class="checkbox-inline" style="margin-left:20px;">
           <input type="checkbox" value="数据标识" v-model="dataLabels" @click="seriesUpdate | debounce 100">数据标识
       </label>
@@ -15,6 +13,7 @@
 </template>
 <script>
 	import dropdown from '../reusable-components/dropdown';
+	import radios from '../reusable-components/radios.vue';
 	import vueResource from '../../vue-resource';
 	import vueOperation from '../../vue-operation';
 	export default {
@@ -87,13 +86,13 @@
 					//this.dataLabels = !this.dataLabels;
 					vueOperation.seriesUpdate(this.dataLabels);
 				},
-				updateType(index) {
-					this.checked = index;
+				updateType() {
 					vueOperation.updateType(this.radios[this.checked].type);
 				}
 			},
 			components: {
-				dropdown
+				"dropdown": dropdown,
+				"radios": radios
 			}
 	}
 </script>
