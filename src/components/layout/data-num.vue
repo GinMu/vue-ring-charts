@@ -14,7 +14,7 @@
 	</div>
 </template>
 <script>
-	import dropdown from '../widget/dropdown';
+	import dropdown from '../reusable-components/dropdown';
 	import vueResource from '../../vue-resource';
 	import vueOperation from '../../vue-operation';
 	export default {
@@ -52,6 +52,12 @@
 					}, {
 						itemName: '酷音铃声点击次数',
 						itemFile: 'kuyin_click.log'
+					}, {
+						itemName: '排行点击次数',
+						itemFile: 'rank_click.log'
+					}, {
+						itemName: 'rankMore点击次数',
+						itemFile: 'rank_more_click.log'
 					}, {
 						itemName: '躺倒鸭点击次数',
 						itemFile: 'course_click.log'
