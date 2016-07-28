@@ -7,7 +7,7 @@
 			    <input type="radio" name="inlineRadioOptions" checked={{radio.radioChecked}} @click="updateType($index)">{{radio.radioName}}
 			</label>
 			<label class="checkbox-inline" style="margin-left:20px;">
-          <input type="checkbox" value="数据标识" checked={{dataLabels}} @click="seriesUpdate()">数据标识
+          <input type="checkbox" value="数据标识" v-model="dataLabels" @click="seriesUpdate | debounce 100">数据标识
       </label>
 		</div>
 		<div class="charts-container"></div>
@@ -84,7 +84,7 @@
 					vueResource.requestChartsData(this);
 				},
 				seriesUpdate() {
-					this.dataLabels = !this.dataLabels;
+					//this.dataLabels = !this.dataLabels;
 					vueOperation.seriesUpdate(this.dataLabels);
 				},
 				updateType(index) {

@@ -4,7 +4,7 @@
 			<span style="margin-right:5px;">百分比类型：</span>
 			<dropdown :items.once="items" :selected.sync="selected" @dropdown-notify="requestData"></dropdown>
 			<label class="checkbox-inline" style="margin-left:20px;">
-        <input type="checkbox" value="data-labels" checked={{dataLabels}} @click="seriesUpdate()">数据标识
+        <input type="checkbox" value="data-labels" v-model="dataLabels" @click="seriesUpdate | debounce 100">数据标识
       </label>
 		</div>
 		<div class="charts-container"></div>
@@ -48,7 +48,7 @@
 					vueResource.requestChartsData(this);
 				},
 				seriesUpdate() {
-					this.dataLabels = !this.dataLabels;
+					//this.dataLabels = !this.dataLabels;
 					vueOperation.seriesUpdate(this.dataLabels);
 				}
 			},
