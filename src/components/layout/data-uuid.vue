@@ -9,8 +9,10 @@
 				</div>
 				<div class="form-group">
 					<span style="margin-right:5px;margin-left:10px;">UUID:</span>
-					<input type="input" class="form-control" name="name" v-model="uuid" style="min-width:350px;">
-					<div class="glyphicon glyphicon-remove" style="cursor:pointer;" @click="clearUUID()"></div>
+					<div class="datepicker">
+						<input class="form-control datepicker-input with-reset-button" v-model="uuid" type="text" style="min-width:350px;">
+						<button type="button" class="close" @click="clearUUID"><span v-if="!uuid? ok:!ok">×</span></button>
+					</div>
 				</div>
 				<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
 			</form>
