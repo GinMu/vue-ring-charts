@@ -4,7 +4,8 @@
 			<form class="form-inline">
 				<div class="form-group">
 					<span style="margin-right:5px;">文件日期:</span>
-					<input type="text" class="form-control" v-model="currentTime" onclick="WdatePicker({lang:'zh-cn'})" readonly="readonly" style="background-color: #fff;">
+					<datepicker :value.sync="currentTime" :format="format" :show-reset-button="false">
+					</datepicker>
 				</div>
 				<div class="form-group">
 					<span style="margin-right:5px;margin-left:10px;">UUID:</span>
@@ -24,13 +25,15 @@
 <script>
 	import vueResource from '../../vue-resource';
 	import vueOperation from '../../vue-operation';
+	import vueStrap from 'vue-strap';
 	export default {
 		data() {
 				return {
 					route: 'search',
 					currentTime: new Date(+new Date() - 16 * 3600 * 1000).toISOString().substring(0, 10),
 					uuid: '',
-					ol: ''
+					ol: '',
+					format: 'yyyy-MM-dd'
 				}
 			},
 			methods: {
@@ -40,6 +43,9 @@
 				clearUUID() {
 					this.uuid = '';
 				}
+			},
+			components: {
+				datepicker: vueStrap.datepicker
 			}
 	}
 </script>
