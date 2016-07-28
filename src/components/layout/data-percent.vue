@@ -53,7 +53,7 @@
 				}
 			},
 			components: {
-				'dropdown': vueStrap.dropdown
+				dropdown
 			}
 	}
 </script>
