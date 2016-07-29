@@ -9,10 +9,7 @@
 				</div>
 				<div class="form-group">
 					<span style="margin-right:5px;margin-left:10px;">UUID:</span>
-					<div class="datepicker">
-						<input class="form-control datepicker-input with-reset-button" v-model="uuid" type="text" style="min-width:350px;">
-						<button type="button" class="close" @click="clearUUID"><span v-if="!uuid? ok:!ok">×</span></button>
-					</div>
+					<inputreset :value.sync="uuid"></inputreset>
 				</div>
 				<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
 			</form>
@@ -28,6 +25,7 @@
 	import vueResource from '../../vue-resource';
 	import vueOperation from '../../vue-operation';
 	import vueStrap from 'vue-strap';
+	import inputReset from '../reusable-components/input-with-reset';
 	export default {
 		data() {
 				return {
@@ -41,13 +39,11 @@
 			methods: {
 				query() {
 					vueResource.requestUUIDData(this);
-				},
-				clearUUID() {
-					this.uuid = '';
 				}
 			},
 			components: {
-				datepicker: vueStrap.datepicker
+				datepicker: vueStrap.datepicker,
+				inputreset: inputReset
 			}
 	}
 </script>
