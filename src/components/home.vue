@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<ring-nav transition="fade" transition-mode="out-in"></ring-nav>
-		<ring-sidebar transition="fade" transition-mode="out-in"></ring-sidebar>
+		<smartcar-nav transition="fade" transition-mode="out-in"></smartcar-nav>
+		<smartcar-sidebar transition="fade" transition-mode="out-in"></smartcar-sidebar>
 	</div>
 </template>
 <script>
@@ -9,8 +9,8 @@
 	import sidebar from './layout/sidebar';
 	export default {
 		components: {
-			'ring-nav': nav,
-			'ring-sidebar': sidebar
+			'smartcar-nav': nav,
+			'smartcar-sidebar': sidebar
 		}
 	}
 </script>

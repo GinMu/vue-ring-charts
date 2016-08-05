@@ -37,7 +37,7 @@
 					checked: 0,
 					dataType: 'percent',
 					selected: 0,
-					dataLabels: true
+					dataLabels: false
 				}
 			},
 			ready() {
