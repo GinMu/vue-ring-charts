@@ -25,6 +25,9 @@
 						itemName: '设备数量',
 						itemFile: 'devices.log'
 					}, {
+						itemName: '新增设备数量',
+						itemFile: 'append_devices.log'
+					}, {
 						itemName: '新增彩铃用户',
 						itemFile: 'new_vip_user.log'
 					}, {
