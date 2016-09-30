@@ -203,7 +203,7 @@ module.exports = {
         var self = current;
         var url = vueOperation.getUrl(self.route);
         var time = self.currentTime;
-        var uuid = self.keyword;
+        var keyword = self.keyword;
         self.$http.get(url, {
             params: {
                 time: time,
