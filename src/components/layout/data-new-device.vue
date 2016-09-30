@@ -38,7 +38,7 @@
 			},
 			methods: {
 				query() {
-          
+          vueResource.requestKeyWord(this);
 				}
 			},
 			components: {

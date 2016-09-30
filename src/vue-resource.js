@@ -199,7 +199,7 @@ module.exports = {
             alert('无相关记录');
         });
     },
-    requestUUIDData: function(current) {
+    requestKeyWord: function(current) {
         var self = current;
         var url = vueOperation.getUrl(self.route);
         var time = self.currentTime;
