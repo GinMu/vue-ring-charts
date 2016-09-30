@@ -216,6 +216,12 @@ module.exports = {
         }).then((response) => {
             var data = JSON.parse(response.body);
             self.num = data.num;
+            var list = [];
+            for (var item of data.arr) {
+              var li = '<li>uuid:' + item.uuid + '   省份:' + item.region + '</li>';
+              list.push(li);
+            }
+            self.ol = list.join('');
         }, (response) => {
             alert('查询出错');
         });

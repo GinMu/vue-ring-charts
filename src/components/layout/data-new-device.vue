@@ -15,7 +15,7 @@
 			</form>
       <div style="margin-top:20px;">
         <span>根据搜索关键词查询的新增的设备数量:</span>
-        <span>{{num}}</span>
+        <span v-show="num">{{num}}</span>
       </div>
 			<div class="bs-example" data-example-id="simple-ol" style="width:50%;margin-left:25%;margin-top:20px;">
 				<ol id="ol_list">
@@ -34,7 +34,7 @@
 		data() {
 				return {
 					route: 'device',
-					currentTime: new Date(+new Date()).toISOString().substring(0, 10),
+					currentTime: new Date().toISOString().substring(0, 10),
 					keyword: '',
 					ol: '',
           num: 0,

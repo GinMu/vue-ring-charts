@@ -57,11 +57,12 @@ app.get('/region', function(req, res) {
 app.get('/device', function(req, res) {
     var keyword = req.query.keyword;
     var date = req.query.time;
-    var lastDate = new Date(+new Date() - 8 * 3600 * 1000).toISOString().substring(0, 10);
+    var lastDate = new Date(+new Date() - 24 * 3600 * 1000).toISOString().substring(0, 10);
     var deviceFileName = '/incoming/devlope/device/' + lastDate + '.devices.log';
     var path = "/home/afd/sync/data/" + date + "/result.log";
     var deviceContent = fs.readFileSync(deviceFileName, 'utf8');
     var num = 0;
+    var arr = [];
     var rl = readline.createInterface({
         input: fs.createReadStream(path),
         output: process.stdout,
@@ -72,15 +73,17 @@ app.get('/device', function(req, res) {
         .on('line', function(line) {
             line = JSON.parse(line);
             if (line.type === 5 && line.key && line.key === keyword) {
-                if (deviceContent.indexOf(line.uuid) < 0) {
+                // if (deviceContent.indexOf(line.uuid) < 0) {
                     num++;
+                    arr.push(line);
                     deviceContent += line.uuid;
-                }
+                // }
             }
         })
         .on('close', function() {
             var obj = {};
             obj.num = num;
+            obj.arr = arr;
             res.status(200).send(JSON.stringify(obj));
         });
 });

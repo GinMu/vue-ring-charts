@@ -18,7 +18,7 @@
 		data() {
 				return {
 					route: 'region',
-					currentTime: new Date(+new Date() - 16 * 3600 * 1000).toISOString().substring(0, 10),
+					currentTime: new Date(+new Date() - 24 * 3600 * 1000).toISOString().substring(0, 10),
 					format: 'yyyy-MM-dd'
 				}
 			},

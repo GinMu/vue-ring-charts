@@ -30,7 +30,7 @@
 		data() {
 				return {
 					route: 'search',
-					currentTime: new Date(+new Date() - 16 * 3600 * 1000).toISOString().substring(0, 10),
+					currentTime: new Date(+new Date() - 24 * 3600 * 1000).toISOString().substring(0, 10),
 					uuid: '',
 					ol: '',
 					format: 'yyyy-MM-dd'
