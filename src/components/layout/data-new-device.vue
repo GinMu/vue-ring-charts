@@ -30,7 +30,7 @@
 		data() {
 				return {
 					route: 'device',
-					currentTime: new Date(+new Date() - 16 * 3600 * 1000).toISOString().substring(0, 10),
+					currentTime: new Date(+new Date()).toISOString().substring(0, 10),
 					keyword: '',
 					ol: '',
 					format: 'yyyy-MM-dd'
