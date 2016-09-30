@@ -81,7 +81,7 @@ app.get('/device', function(req, res) {
         .on('close', function() {
             var obj = {};
             obj.num = num;
-            res.status(200).send(obj);
+            res.status(200).send(JSON.stringify(obj));
         });
 });
 
