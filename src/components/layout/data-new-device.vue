@@ -29,7 +29,7 @@
 	export default {
 		data() {
 				return {
-					route: 'search',
+					route: 'device',
 					currentTime: new Date(+new Date() - 16 * 3600 * 1000).toISOString().substring(0, 10),
 					keyword: '',
 					ol: '',
@@ -38,7 +38,7 @@
 			},
 			methods: {
 				query() {
-
+          
 				}
 			},
 			components: {

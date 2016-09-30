@@ -198,5 +198,26 @@ module.exports = {
         }, (response) => {
             alert('无相关记录');
         });
+    },
+    requestUUIDData: function(current) {
+        var self = current;
+        var url = vueOperation.getUrl(self.route);
+        var time = self.currentTime;
+        var uuid = self.keyword;
+        self.$http.get(url, {
+            params: {
+                time: time,
+                keyword: keyword
+            },
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            },
+            emulateJSON: false
+        }).then((response) => {
+            var data = JSON.parse(response.body);
+            console.log(response.body);
+        }, (response) => {
+            alert('无相关记录');
+        });
     }
 };
