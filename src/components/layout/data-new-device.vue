@@ -13,6 +13,10 @@
 				</div>
 				<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
 			</form>
+      <div style="margin-top:20px;">
+        <span>根据搜索关键词查询的新增的设备数量:</span>
+        <span>{{num}}</span>
+      </div>
 			<div class="bs-example" data-example-id="simple-ol" style="width:50%;margin-left:25%;margin-top:20px;">
 				<ol id="ol_list">
 					{{{ol}}}
@@ -33,6 +37,7 @@
 					currentTime: new Date(+new Date()).toISOString().substring(0, 10),
 					keyword: '',
 					ol: '',
+          num: 0,
 					format: 'yyyy-MM-dd'
 				}
 			},

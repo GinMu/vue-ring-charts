@@ -215,9 +215,9 @@ module.exports = {
             emulateJSON: false
         }).then((response) => {
             var data = JSON.parse(response.body);
-            console.log(response.body);
+            self.num = data.num;
         }, (response) => {
-            alert('无相关记录');
+            alert('查询出错');
         });
     }
 };

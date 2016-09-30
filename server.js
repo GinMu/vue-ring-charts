@@ -13,9 +13,9 @@ app.get('/chart', function(req, res) {
     var path = '/incoming/devlope/ringcharts/' + filename;
     fs.readFile(path, 'utf8', function(err, data) {
         if (err) {
-            res.send(404);
+            res.status(404);
         } else {
-            res.send(200, data);
+            res.status(200).send(data);
         }
     });
 });
@@ -38,7 +38,7 @@ app.get('/search', function(req, res) {
             }
         })
         .on('close', function() {
-            res.send(array);
+            res.status(200).send(array);
         });
 });
 app.get('/region', function(req, res) {
@@ -46,9 +46,9 @@ app.get('/region', function(req, res) {
     var path = "/incoming/devlope/regionMaps/" + time + ".log";
     fs.readFile(path, 'utf8', function(err, data) {
         if (err) {
-            res.send(404);
+            res.status(404);
         } else {
-            res.send(200, data);
+            res.status(200).send(data);
         }
     });
 });
@@ -79,7 +79,9 @@ app.get('/device', function(req, res) {
             }
         })
         .on('close', function() {
-            res.send(num);
+            var obj = {};
+            obj.num = num;
+            res.status(200).send(obj);
         });
 });
 
