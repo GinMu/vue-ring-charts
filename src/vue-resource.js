@@ -218,7 +218,7 @@ module.exports = {
             self.num = data.num;
             var list = [];
             for (var item of data.arr) {
-              var li = '<li>' + item.uuid + ' ' + item.region + '  ' + item.tel + '</li>';
+              var li = '<li>' + item.uuid + ' ' + item.region + '</li>';
               list.push(li);
             }
             self.ol = list.join('');
