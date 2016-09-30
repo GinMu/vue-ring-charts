@@ -73,11 +73,11 @@ app.get('/device', function(req, res) {
         .on('line', function(line) {
             line = JSON.parse(line);
             if (line.type === 5 && line.key && line.key === keyword) {
-                // if (deviceContent.indexOf(line.uuid) < 0) {
+                if (deviceContent.indexOf(line.uuid) < 0) {
                     num++;
                     arr.push(line);
                     deviceContent += line.uuid;
-                // }
+                }
             }
         })
         .on('close', function() {
