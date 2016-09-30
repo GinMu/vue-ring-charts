@@ -19,6 +19,7 @@
 	import dataPercent from './data-percent';
 	import dataRegion from './data-region';
 	import dataUuid from './data-uuid';
+	import dataDevice from './data-new-device';
 	export default {
 		data() {
 				return {
@@ -30,6 +31,8 @@
 						tabName: '各省数据'
 					}, {
 						tabName: 'UUID查询'
+					}, {
+						tabName: '新增设备数量'
 					}],
 					selected: 0,
 					currentView: 'view_0'
@@ -46,6 +49,7 @@
 				"view_1": dataPercent,
 				"view_2": dataRegion,
 				"view_3": dataUuid,
+				"view_4": dataDevice
 			}
 	}
 </script>
