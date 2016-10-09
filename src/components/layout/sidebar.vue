@@ -20,6 +20,7 @@
 	import dataRegion from './data-region';
 	import dataUuid from './data-uuid';
 	import dataDevice from './data-new-device';
+	import dataFeedback from './data-feedback';
 	export default {
 		data() {
 				return {
@@ -33,6 +34,8 @@
 						tabName: 'UUID查询'
 					}, {
 						tabName: '新增设备数量'
+					}, {
+						tabName: '反馈意见'
 					}],
 					selected: 0,
 					currentView: 'view_0'
@@ -49,7 +52,8 @@
 				"view_1": dataPercent,
 				"view_2": dataRegion,
 				"view_3": dataUuid,
-				"view_4": dataDevice
+				"view_4": dataDevice,
+				"view_5": dataFeedback
 			}
 	}
 </script>
