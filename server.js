@@ -103,7 +103,7 @@ app.get('/feedback', function(req, res) {
     rl
         .on('line', function(line) {
             line = JSON.parse(line);
-            if (line.type === type) {
+            if (line.type == type) {
               arr.push(line);
             }
         })
