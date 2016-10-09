@@ -42,11 +42,11 @@
 				}
 			},
 			ready() {
-
+				vueResource.requestFeedback(this);
 			},
 			methods: {
 				query() {
-
+					vueResource.requestFeedback(this);
 				}
 			},
 			components: {
