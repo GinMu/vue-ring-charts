@@ -46,20 +46,11 @@
 						itemName: '推荐点击次数',
 						itemFile: 'recommend_click.log'
 					}, {
-						itemName: '苹果铃声点击次数',
-						itemFile: 'apple_click.log'
-					}, {
 						itemName: '专题点击次数',
 						itemFile: 'topic_click.log'
 					}, {
 						itemName: '酷音铃声点击次数',
 						itemFile: 'kuyin_click.log'
-					}, {
-						itemName: '排行点击次数',
-						itemFile: 'rank_click.log'
-					}, {
-						itemName: 'rankMore点击次数',
-						itemFile: 'rank_more_click.log'
 					}, {
 						itemName: '躺倒鸭点击次数',
 						itemFile: 'course_click.log'
