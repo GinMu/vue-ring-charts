@@ -243,6 +243,11 @@ module.exports = {
             emulateJSON: false
         }).then((response) => {
             var data = JSON.parse(response.body);
+            if (data.length === 0) {
+              self.empty = true;
+            } else {
+              self.empty = false;
+            }
             self.datas = data;
         }, (response) => {
             alert('查询出错');
