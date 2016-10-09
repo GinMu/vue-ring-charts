@@ -10,14 +10,34 @@ app.all('/*/', function(req, res, next) {
 });
 app.get('/chart', function(req, res) {
     var filename = req.query.filename;
+    var lastTime = req.query.lastTime;
+    var currentTime = req.query.currentTime;
     var path = '/incoming/devlope/ringcharts/' + filename;
-    fs.readFile(path, 'utf8', function(err, data) {
-        if (err) {
-            res.status(404);
-        } else {
-            res.status(200).send(data);
-        }
+    var data = [];
+    const rl = readline.createInterface({
+        input: fs.createReadStream(path),
+        output: process.stdout,
+        terminal: false
     });
+
+    rl
+        .on('line', function(line) {
+            if (line.indexOf('Day') >= 0) {
+              data.push(line);
+            } else {
+              var date = line.substring(0,10);
+              if (date.indexOf('/') >= 0) {
+                date = date.split('/');
+                date = date[2] + '-' + date[1] + '-' + date[0];
+              }
+              if (date >= lastTime && date <= currentTime) {
+                data.push(line);
+              }
+            }
+        })
+        .on('close', function() {
+            res.status(200).send(data.join('\n'));
+        });
 });
 app.get('/search', function(req, res) {
     var array = [];

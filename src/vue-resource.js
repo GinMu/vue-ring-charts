@@ -6,7 +6,9 @@ module.exports = {
         var url = vueOperation.getUrl(self.route);
         self.$http.get(url, {
             params: {
-                filename: self.items[self.selected].itemFile
+                filename: self.items[self.selected].itemFile,
+                lastTime: self.lastTime,
+                currentTime: self.currentTime
             },
             headers: {
                 "X-Requested-With": "XMLHttpRequest"
