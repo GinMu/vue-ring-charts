@@ -226,5 +226,26 @@ module.exports = {
         }, (response) => {
             alert('查询出错');
         });
+    },
+    requestFeedback: function(current) {
+        var self = current;
+        var url = vueOperation.getUrl(self.route);
+        var time = self.currentTime;
+        var type = self.items[self.selected].itemType;
+        self.$http.get(url, {
+            params: {
+                time: time,
+                type: type
+            },
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            },
+            emulateJSON: false
+        }).then((response) => {
+            var data = JSON.parse(response.body);
+            self.datas = data;
+        }, (response) => {
+            alert('查询出错');
+        });
     }
 };

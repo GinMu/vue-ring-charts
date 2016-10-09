@@ -8,7 +8,14 @@
 			</datepicker>
 			<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
 		</div>
-		<div class="charts-container">
+		<div class="bs-example" data-example-id="simple-ol" style="width:50%;margin-left:25%;margin-top:20px;">
+			<div v-for="data in datas">
+				<span>电话号码：</span>
+				<span v-text="data.tel"></span>
+				<span style="margin-left:20px;">意见：</span>
+				<span v-if="data.type === 13">{{data.message}}</span>
+				<span v-else>{{unescape(data.word)}}</span>
+			</div>
 		</div>
 	</div>
 </template>
@@ -20,7 +27,7 @@
 	export default {
 		data() {
 				return {
-					route: 'region',
+					route: 'feedback',
 					currentTime: new Date().toISOString().substring(0, 10),
 					format: 'yyyy-MM-dd',
 					items: [{
@@ -30,7 +37,8 @@
 						itemName: '退订原因',
 						itemType: 13
 					}],
-					selected: 0
+					selected: 0,
+					datas: []
 				}
 			},
 			ready() {

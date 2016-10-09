@@ -89,4 +89,28 @@ app.get('/device', function(req, res) {
         });
 });
 
+app.get('/feedback', function(req, res) {
+    var keyword = req.query.keyword;
+    var date = req.query.time;
+    var type = req.query.type;
+    var path = "/home/afd/sync/data/" + date + "/result.log";
+    var arr = [];
+    var rl = readline.createInterface({
+        input: fs.createReadStream(path),
+        output: process.stdout,
+        terminal: false
+    });
+
+    rl
+        .on('line', function(line) {
+            line = JSON.parse(line);
+            if (line.type === type) {
+              arr.push(line);
+            }
+        })
+        .on('close', function() {
+            res.status(200).send(JSON.stringify(arr));
+        });
+});
+
 app.listen(8000);
