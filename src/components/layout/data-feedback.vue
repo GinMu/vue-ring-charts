@@ -8,13 +8,14 @@
 			</datepicker>
 			<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
 		</div>
-		<div class="bs-example" data-example-id="simple-ol" style="width:50%;margin-left:25%;margin-top:20px;">
-			<div v-for="data in datas">
+		<div class="bs-example" data-example-id="simple-ol" style="width:80%;margin-left:10%;margin-top:20px;">
+			<div v-for="data in unescapeData">
 				<span>电话号码：</span>
 				<span v-text="data.tel"></span>
-				<span style="margin-left:20px;">意见：</span>
+				<span style="margin-left:20px;" v-if="data.type === 13">退订原因：</span>
+				<span style="margin-left:20px;" v-else>反馈意见：</span>
 				<span v-if="data.type === 13">{{data.message}}</span>
-				<span v-else>{{unescape(data.word)}}</span>
+				<span v-else>{{data.word}}</span>
 			</div>
 		</div>
 	</div>
@@ -43,6 +44,14 @@
 			},
 			ready() {
 				vueResource.requestFeedback(this);
+			},
+			computed: {
+				unescapeData: function() {
+					for (var data of this.datas) {
+						data.word = unescape(data.word);
+					}
+					return this.datas;
+				}
 			},
 			methods: {
 				query() {

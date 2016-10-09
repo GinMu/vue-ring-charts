@@ -90,7 +90,6 @@ app.get('/device', function(req, res) {
 });
 
 app.get('/feedback', function(req, res) {
-    var keyword = req.query.keyword;
     var date = req.query.time;
     var type = req.query.type;
     var path = "/home/afd/sync/data/" + date + "/result.log";
