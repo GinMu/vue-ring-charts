@@ -57,7 +57,8 @@ app.get('/region', function(req, res) {
 app.get('/device', function(req, res) {
     var keyword = req.query.keyword;
     var date = req.query.time;
-    var lastDate = new Date(+new Date() - 24 * 3600 * 1000).toISOString().substring(0, 10);
+
+    var lastDate = req.query.last;
     var deviceFileName = '/incoming/devlope/device/' + lastDate + '.devices.log';
     var path = "/home/afd/sync/data/" + date + "/result.log";
     var deviceContent = fs.readFileSync(deviceFileName, 'utf8');

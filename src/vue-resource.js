@@ -207,7 +207,8 @@ module.exports = {
         self.$http.get(url, {
             params: {
                 time: time,
-                keyword: keyword
+                keyword: keyword,
+                last: self.lastTime
             },
             headers: {
                 "X-Requested-With": "XMLHttpRequest"

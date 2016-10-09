@@ -4,7 +4,12 @@
 			<form class="form-inline">
 				<div class="form-group">
 					<span style="margin-right:5px;">文件日期:</span>
-					<datepicker :value.sync="currentTime" :format="format" :show-reset-button="false">
+					<datepicker :value.sync="currentTime" :format="format" :show-reset-button="false" :width="width">
+					</datepicker>
+				</div>
+				<div class="form-group">
+					<span style="margin-right:5px;">前一天:</span>
+					<datepicker :value.sync="lastTime" :format="format" :show-reset-button="false" :width="width">
 					</datepicker>
 				</div>
 				<div class="form-group">
@@ -35,7 +40,9 @@
 				return {
 					route: 'device',
 					currentTime: new Date().toISOString().substring(0, 10),
+					lastTime: new Date(+new Date() - 24 * 3600 * 1000).toISOString().substring(0, 10),
 					keyword: '',
+					width: '120px',
 					ol: '',
           num: 0,
 					format: 'yyyy-MM-dd'
