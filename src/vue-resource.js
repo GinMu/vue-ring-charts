@@ -219,6 +219,7 @@ module.exports = {
         }).then((response) => {
             var data = JSON.parse(response.body);
             self.num = data.num;
+            self.success = true;
             var list = [];
             for (var item of data.arr) {
               var li = '<li>' + item.uuid + ' ' + item.region + '</li>';
@@ -226,6 +227,7 @@ module.exports = {
             }
             self.ol = list.join('');
         }, (response) => {
+            self.success = false;
             alert('查询出错');
         });
     },

@@ -18,7 +18,7 @@
 				</div>
 				<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
 			</form>
-      <div style="margin-top:20px;">
+      <div style="margin-top:20px;" v-show="success">
         <span>根据搜索关键词查询的新增的设备数量:</span>
         <span>{{num}}</span>
       </div>
@@ -45,7 +45,8 @@
 					width: '120px',
 					ol: '',
           num: 0,
-					format: 'yyyy-MM-dd'
+					format: 'yyyy-MM-dd',
+					success: false
 				}
 			},
 			methods: {
