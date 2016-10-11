@@ -39,8 +39,8 @@
 		data() {
 				return {
 					route: 'device',
-					currentTime: new Date().toISOString().substring(0, 10),
-					lastTime: new Date(+new Date() - 24 * 3600 * 1000).toISOString().substring(0, 10),
+					currentTime: new Date(+new Date() - 24 * 3600 * 1000).toISOString().substring(0, 10),
+					lastTime: new Date(+new Date() - 48 * 3600 * 1000).toISOString().substring(0, 10),
 					keyword: '',
 					width: '120px',
 					ol: '',
