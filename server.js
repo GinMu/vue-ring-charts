@@ -23,16 +23,16 @@ app.get('/chart', function(req, res) {
     rl
         .on('line', function(line) {
             if (line.indexOf('Day') >= 0) {
-              data.push(line);
-            } else {
-              var date = line.substring(0,10);
-              if (date.indexOf('/') >= 0) {
-                date = date.split('/');
-                date = date[2] + '-' + date[1] + '-' + date[0];
-              }
-              if (date >= lastTime && date <= currentTime) {
                 data.push(line);
-              }
+            } else {
+                var date = line.substring(0, 10);
+                if (date.indexOf('/') >= 0) {
+                    date = date.split('/');
+                    date = date[2] + '-' + date[1] + '-' + date[0];
+                }
+                if (date >= lastTime && date <= currentTime) {
+                    data.push(line);
+                }
             }
         })
         .on('close', function() {
@@ -92,14 +92,19 @@ app.get('/device', function(req, res) {
 
     rl
         .on('line', function(line) {
-            line = JSON.parse(line);
-            if (line.type === 5 && line.key && line.key === keyword) {
-                if (deviceContent.indexOf(line.uuid) < 0) {
-                    num++;
-                    arr.push(line);
-                    deviceContent += line.uuid;
+            try {
+                line = JSON.parse(line);
+                if (line.type === 5 && line.key && line.key === keyword) {
+                    if (deviceContent.indexOf(line.uuid) < 0) {
+                        num++;
+                        arr.push(line);
+                        deviceContent += line.uuid;
+                    }
                 }
+            } catch (e) {
+                console.log(line);
             }
+
         })
         .on('close', function() {
             var obj = {};
@@ -124,7 +129,7 @@ app.get('/feedback', function(req, res) {
         .on('line', function(line) {
             line = JSON.parse(line);
             if (line.type == type) {
-              arr.push(line);
+                arr.push(line);
             }
         })
         .on('close', function() {

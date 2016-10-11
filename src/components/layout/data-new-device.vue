@@ -18,7 +18,7 @@
 				</div>
 				<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
 			</form>
-      <div style="margin-top:20px;" v-show="num">
+      <div style="margin-top:20px;">
         <span>根据搜索关键词查询的新增的设备数量:</span>
         <span>{{num}}</span>
       </div>
