@@ -9,7 +9,7 @@
 				</div>
 				<div class="form-group">
 					<span style="margin-right:5px;margin-left:10px;">UUID:</span>
-					<inputreset :value.sync="uuid"></inputreset>
+					<inputreset :value.sync="uuid" @keyup.enter="query"></inputreset>
 				</div>
 				<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
 			</form>

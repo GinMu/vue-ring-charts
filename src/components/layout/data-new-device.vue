@@ -14,7 +14,7 @@
 				</div>
 				<div class="form-group">
 					<span style="margin-right:5px;margin-left:10px;">搜索关键词:</span>
-					<inputreset :value.sync="keyword"></inputreset>
+					<inputreset :value.sync="keyword" @keyup.enter="query"></inputreset>
 				</div>
 				<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
 			</form>
