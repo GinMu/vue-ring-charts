@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const readline = require('readline');
+const process = require('child_process');
 var app = module.exports = express();
 app.all('/*/', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -84,6 +85,7 @@ app.get('/device', function(req, res) {
     var deviceContent = fs.readFileSync(deviceFileName, 'utf8');
     var num = 0;
     var arr = [];
+    var command = 'node /home/afd/dqtool/ringDataTool/printlog.js -f ' + path + ' -c "type,uuid,key" | grep "^5" | grep "' + keyword + '$" | sort -u | wc -l';
     var rl = readline.createInterface({
         input: fs.createReadStream(path),
         output: process.stdout,
@@ -110,7 +112,16 @@ app.get('/device', function(req, res) {
             var obj = {};
             obj.num = num;
             obj.arr = arr;
-            res.status(200).send(JSON.stringify(obj));
+            process.exec(command,{
+              encoding: 'utf8'
+            },function(err,output){
+              if (err) {
+                obj.total = -1;
+                res.status(200).send(JSON.stringify(obj));
+              }
+              obj.total = output.trim();
+              res.status(200).send(JSON.stringify(obj));
+            });
         });
 });
 

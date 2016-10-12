@@ -18,8 +18,12 @@
 				</div>
 				<button class="btn btn-sm btn-primary" type="button" style="margin-left:40px;" @click="query()">查询</button>
 			</form>
-      <div style="margin-top:20px;" v-show="success">
-        <span>根据搜索关键词查询的新增的设备数量:</span>
+			<div style="margin-top:20px;" v-show="success">
+        <span>{{currentTime}}搜索{{keyword}}关键词的不同设备数量:</span>
+        <span>{{total}}</span>
+      </div>
+      <div style="margin-top:10px;" v-show="success">
+        <span>和{{lastTime}}相比，根据{{keyword}}关键词新增的设备数量:</span>
         <span>{{num}}</span>
       </div>
 			<div class="bs-example" data-example-id="simple-ol" style="width:50%;margin-left:25%;margin-top:20px;">
@@ -46,7 +50,8 @@
 					ol: '',
           num: 0,
 					format: 'yyyy-MM-dd',
-					success: false
+					success: false,
+					total: -1
 				}
 			},
 			methods: {

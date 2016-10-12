@@ -220,6 +220,7 @@ module.exports = {
             var data = JSON.parse(response.body);
             self.num = data.num;
             self.success = true;
+            self.total = data.total;
             var list = [];
             for (var item of data.arr) {
               var li = '<li>' + item.uuid + ' ' + item.region + '</li>';
